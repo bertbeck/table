@@ -1,6 +1,6 @@
 import React from 'react';
 import RealmLabels from '../Components/RealmLabels';
-import './style.scss';
+import './style.css';
 
 const data = [
   {
@@ -53,16 +53,20 @@ export default class ClientsUpload extends React.Component {
         </div>
 
         <table style={{width:'100%',backgroundColor:'white'}}>
+          <thead>
           <tr style={{backgroundColor:'#e1e1e1', borderWidth:1, borderColor:'black', margin: 10}}>
             <th style={{width:'30%'}}>COLUMN LABEL FROM YOUR FILE</th>
             <th style={{width:'40%'}}>PREVIEW</th>
             <th style={{width:'30%'}}>REALM LABEL</th>
           </tr>
+          </thead>
+          <tbody>
           {data.map(p => <tr>
             <td>{p.columnLabel}</td>
             <td>{p.previewData}</td>
             <td><RealmLabels value={p.realmLabel}/></td>
           </tr>)}
+          </tbody>
         </table>
 
 
